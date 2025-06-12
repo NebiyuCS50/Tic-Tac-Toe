@@ -8,14 +8,14 @@ A classic Tic Tac Toe game built with vanilla JavaScript, where two players can 
 
 - Detects win, draw, and reset
 
--Structured code using:
-✅ Factory Functions
+- Structured code using:
+  ✅ Factory Functions
 
-    ✅ Module Pattern (IIFE)
+  ✅ Module Pattern (IIFE)
 
-    ✅ Prototypal Inheritance
+  ✅ Prototypal Inheritance
 
-    ✅ Encapsulation with Closures
+  ✅ Encapsulation with Closures
 
 ## 🛠️ Technologies Used
 
