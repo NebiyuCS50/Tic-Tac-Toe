@@ -26,12 +26,12 @@ A classic Tic Tac Toe game built with vanilla JavaScript, where two players can 
 
 - JavaScript (ES6+)
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-## 1. Clone the repository
+1.  Clone the repository
 
-## 2. Open index.html in your browser
+2.  Open index.html in your browser
 
-# 🙋‍♂️ Author
+## 🙋‍♂️ Author
 
 Built with ❤️ by Nebiyu Elias
