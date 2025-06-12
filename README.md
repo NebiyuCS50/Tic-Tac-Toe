@@ -9,6 +9,7 @@ A classic Tic Tac Toe game built with vanilla JavaScript, where two players can 
 - Detects win, draw, and reset
 
 - Structured code using:
+
   ✅ Factory Functions
 
   ✅ Module Pattern (IIFE)
