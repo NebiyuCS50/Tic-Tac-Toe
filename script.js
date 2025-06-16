@@ -166,10 +166,12 @@ btn.addEventListener("click", function () {
 
         if (checkWinner(gameBoard.getBoard(), currentPlayer.marker)) {
           alert(`${currentPlayer.name} wins! 🎉`);
+          window.location.reload();
           return;
         }
         if (board.every((cell) => cell !== "")) {
           alert("It's a draw!");
+          window.location.reload();
           return;
         }
         switchPlayer();
