@@ -4,14 +4,14 @@ const gameBoard = (function () {
 
   function print_board() {
     console.log(`
-        ${game_board[1] || "1"} | ${game_board[2] || "2"} | ${
-      game_board[3] || "3"
+        ${game_board[0] || "0"} | ${game_board[1] || "1"} | ${
+      game_board[2] || "2"
     }
-        ${game_board[0] || "4"} | ${game_board[0] || "5"} | ${
-      game_board[0] || "6"
+        ${game_board[3] || "3"} | ${game_board[4] || "4"} | ${
+      game_board[5] || "5"
     }
-        ${game_board[0] || "7"} | ${game_board[0] || "8"} | ${
-      game_board[0] || "9"
+        ${game_board[6] || "6"} | ${game_board[7] || "7"} | ${
+      game_board[8] || "8"
     }
         `);
   }
@@ -23,7 +23,7 @@ const gameBoard = (function () {
     }
   }
   function resetBoard() {
-    board = ["", "", "", "", "", "", "", "", ""];
+    game_board = ["", "", "", "", "", "", "", "", ""];
   }
   function getBoard() {
     return game_board;
@@ -54,8 +54,22 @@ const gameController = (function () {
     gameBoard.print_board();
   }
   function playTurn(index) {
+    const board = gameBoard.getBoard();
+    if (board[index] !== "") {
+      console.log("Spot already taken!");
+      return;
+    }
     gameBoard.updateBoard(index, currentPlayer.marker);
     gameBoard.print_board();
+
+    if (checkWinner(gameBoard.getBoard(), currentPlayer.marker)) {
+      console.log(`${currentPlayer.name} wins! 🎉`);
+      return;
+    }
+    if (board.every((cell) => cell !== "")) {
+      console.log("It's a draw!");
+      return;
+    }
     switchPlayer();
   }
 
@@ -82,3 +96,13 @@ function checkWinner(board, marker) {
     pattern.every((index) => board[index] === marker)
   );
 }
+
+gameController.startGame("Nebiyu", "X", "Sara", "O");
+gameController.playTurn(1);
+gameController.playTurn(4);
+gameController.playTurn(2);
+gameController.playTurn(5);
+gameController.playTurn(3);
+gameController.playTurn(8);
+gameController.playTurn(6);
+gameController.playTurn(0);
